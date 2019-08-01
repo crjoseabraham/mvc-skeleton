@@ -1,5 +1,7 @@
 {
 	"name": "crjoseabraham/php-mvc",
+	"description": "PHP MVC structure with router for new projects",
+	"type": "project",
 	"authors": [
 		{
 			"name": "Jose Abraham Castillo",
@@ -7,6 +9,9 @@
 		}
 	],
 	"autoload": {
-		
+		"psr-4": {
+			"App\\": "app"
+		},
+		"files": ["app/functions/helpers.php"]		
 	}
 }
