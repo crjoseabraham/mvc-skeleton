@@ -37,8 +37,8 @@ function getRequestMethod() : string
  */
 function view(string $file, $data = [])
 {
-    if (file_exists(dirname(dirname(__DIR__)) . "/Resources/Views/$file.php"))
-        require_once dirname(dirname(__DIR__)) . "/Resources/Views/$file.php";
+    if (file_exists(dirname(dirname(__DIR__)) . "/resources/views/$file.php"))
+        require_once dirname(dirname(__DIR__)) . "/resources/views/$file.php";
     else
-        throw new Exception("This page does not exist", 404);
+        die("This page does not exist");
 }

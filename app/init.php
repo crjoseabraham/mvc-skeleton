@@ -1,8 +1,8 @@
 <?php
 // Autoload classes
 spl_autoload_register(function ($className) {
-  $className = str_replace("\\", "/", $className);
-  require_once $_SERVER['DOCUMENT_ROOT'] . "/php-mvc/$className.php";
+    $className = str_replace("\\", "/", $className);
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/php-mvc/$className.php";
 });
 
 // Load helper functions

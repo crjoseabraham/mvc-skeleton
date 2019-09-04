@@ -125,11 +125,11 @@ class Router
                     // Then we successfully call the controller method:
                     $controller_object->$controller_action();
                 } else
-                    throw new Exception("The method $this->action does not exist in the $this->controller controller");
+                    die("The method $this->action does not exist in the $this->controller controller");
             } else
-                throw new Exception("Controller class $this->controller not found");
+                die("Controller class $this->controller not found");
         } else
-            throw new Exception("No route matched", 404);
+            die("No route matched");
     }
 
     /**
