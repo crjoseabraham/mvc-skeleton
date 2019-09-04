@@ -1,21 +1,44 @@
 <?php
+/**
+ * Basic functions for the app that should be available globally
+ */
 
+ /**
+  * Get the current URI
+  *
+  * @return string
+  */
 function getURI() : string
 {
-  $uri = $_SERVER['REQUEST_URI'];
-  $uri = explode('/', $uri);
-  array_shift($uri);
-  array_shift($uri);
-  $uri = '/' . implode('/', $uri);
-  return $uri;
+    $uri = $_SERVER['REQUEST_URI'];
+    $uri = explode('/', $uri);
+    array_shift($uri);
+    array_shift($uri);
+    $uri = '/' . implode('/', $uri);
+    return $uri;
 }
 
+/**
+ * Get the HTTP method for the current URI
+ *
+ * @return string
+ */
 function getRequestMethod() : string
 {
-  return $_SERVER['REQUEST_METHOD'];
+    return $_SERVER['REQUEST_METHOD'];
 }
 
-function view(string $file)
+/**
+ * Display a view
+ *
+ * @param string $file Name of the file to search for
+ * @param array $data  Optional variables that may be passed or not
+ * @return void
+ */
+function view(string $file, $data = [])
 {
-  return "view: $file";
+    if (file_exists(dirname(dirname(__DIR__)) . "/Resources/Views/$file.php"))
+        require_once dirname(dirname(__DIR__)) . "/Resources/Views/$file.php";
+    else
+        throw new Exception("This page does not exist", 404);
 }

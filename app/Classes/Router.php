@@ -19,9 +19,9 @@ class Router
     private $action;
 
     /**
-     * @var string Corresponding parameters for current route
+     * @var array Corresponding arguments for the current route controller method
      */
-    protected $args;
+    protected $args = [];
 
     /**
      * Get routes array
