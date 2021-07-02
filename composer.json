@@ -1,0 +1,16 @@
+{
+    "name": "crjoseabraham/php-mvc",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jose Abraham Castillo",
+            "email": "crjoseabraham@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
